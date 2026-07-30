@@ -1235,13 +1235,8 @@ footer{ background:var(--navy); color:#CBD5E1; padding:72px 0 28px; }
     track._t = window.setTimeout(updateDots, 80);
   }, { passive:true });
 
-  var autoplay = window.setInterval(function(){
-    var idx = updateDots();
-    var next = (idx + 1) % cards.length;
-    cards[next].scrollIntoView({ behavior:'smooth', inline:'start', block:'nearest' });
-  }, 5200);
   [track, dotsWrap].forEach(function(el){
-    el.addEventListener('mouseenter', function(){ window.clearInterval(autoplay); });
+    el.addEventListener('mouseenter', function(){ });
   });
 
   /* ---------- gallery lightbox ---------- */
