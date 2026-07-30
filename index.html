@@ -121,12 +121,13 @@
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; scroll-padding-top:92px; }
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
 }
 body{
+  scroll-margin-top:92px;
   margin:0;
   background:var(--bg);
   color:var(--text);
@@ -1288,7 +1289,7 @@ footer{ background:var(--navy); color:#CBD5E1; padding:72px 0 28px; }
       Array.prototype.forEach.call(serviceSelect.options, function(opt){
         if(opt.value === wanted){ opt.selected = true; }
       });
-      document.getElementById('booking').scrollIntoView({ behavior:'smooth' });
+      document.getElementById('booking').scrollIntoView({ behavior:'smooth', block:'start' });
       document.getElementById('fullName').focus({ preventScroll:true });
     });
   });
